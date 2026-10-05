@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitBuddy - AI Fitness Plan Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            💪 <span>FitBuddy</span>
+        </div>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/view-all-users">Users</a>
+            <a href="/docs">API Docs</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🤖 AI-Powered Fitness Assistant
+            </div>
+
+            <h1>
+                Your Personal
+                <span>FitBuddy</span>
+            </h1>
+
+            <p>
+                Create a personalized 7-day workout plan based on
+                your age, weight, fitness goal and preferred workout intensity.
+            </p>
+
+            <a href="#fitness-form" class="hero-button">
+                Create My Fitness Plan →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features-section">
+
+        <div class="section-heading">
+
+            <span class="section-icon">🏋️</span>
+
+            <h2>Smart Fitness Planning</h2>
+
+            <p>
+                Personalized workouts, recovery guidance and nutrition
+                tips in one place.
+            </p>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <strong>7</strong>
+                <span>Days</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>AI</strong>
+                <span>Powered</span>
+            </div>
+
+            <div class="stat-card">
+                <strong>100%</strong>
+                <span>Personal</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Everything You Need -->
+    <section class="everything">
+
+        <div class="section-heading">
+
+            <span class="section-icon">🎯</span>
+
+            <h2>Everything You Need</h2>
+
+            <p>
+                Build better fitness habits with a simple personalized plan.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>Personalized Plans</h3>
+
+                <p>
+                    Get a workout plan based on your personal fitness
+                    information and goals.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <h3>AI Assistance</h3>
+
+                <p>
+                    Gemini AI can generate customized workout
+                    recommendations.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🥗
+                </div>
+
+                <h3>Nutrition Tips</h3>
+
+                <p>
+                    Receive simple nutrition suggestions alongside
+                    your workout plan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Fitness Form -->
+    <section class="form-section" id="fitness-form">
+
+        <div class="form-container">
+
+            <div class="form-heading">
+
+                <span>GET STARTED</span>
+
+                <h2>Create Your Fitness Plan</h2>
+
+                <p>
+                    Enter your information below and FitBuddy will create
+                    your personalized 7-day plan.
+                </p>
+
+            </div>
+
+
+            <form action="/generate-workout" method="post">
+
+                <!-- Name -->
+                <div class="form-group">
+
+                    <label for="username">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- User ID -->
+                <div class="form-group">
+
+                    <label for="user_id">
+                        User ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="user_id"
+                        name="user_id"
+                        placeholder="Enter your user ID"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Age -->
+                <div class="form-group">
+
+                    <label for="age">
+                        Age
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        min="13"
+                        max="100"
+                        placeholder="Enter your age"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Weight -->
+                <div class="form-group">
+
+                    <label for="weight">
+                        Weight (kg)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="weight"
+                        name="weight"
+                        min="20"
+                        max="300"
+                        step="0.1"
+                        placeholder="Enter your weight"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Fitness Goal -->
+                <div class="form-group">
+
+                    <label for="goal">
+                        Fitness Goal
+                    </label>
+
+                    <select
+                        id="goal"
+                        name="goal"
+                        required
+                    >
+
+                        <option value="">
+                            Select your goal
+                        </option>
+
+                        <option value="Weight Loss">
+                            Weight Loss
+                        </option>
+
+                        <option value="Muscle Gain">
+                            Muscle Gain
+                        </option>
+
+                        <option value="General Fitness">
+                            General Fitness
+                        </option>
+
+                        <option value="Flexibility">
+                            Flexibility
+                        </option>
+
+                        <option value="Strength">
+                            Strength
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Intensity -->
+                <div class="form-group">
+
+                    <label for="intensity">
+                        Workout Intensity
+                    </label>
+
+                    <select
+                        id="intensity"
+                        name="intensity"
+                        required
+                    >
+
+                        <option value="">
+                            Select intensity
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="generate-button"
+                >
+                    🚀 Generate My Fitness Plan
+                </button>
+
+            </form>
+
+
+            <div class="safety-note">
+
+                ⚠️ Your plan is generated for fitness guidance.
+                Stop exercising if you experience pain or unusual discomfort.
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            💪 FitBuddy
+        </div>
+
+        <p>
+            Your AI-powered fitness companion.
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
